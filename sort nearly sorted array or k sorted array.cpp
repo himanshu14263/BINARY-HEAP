@@ -1,5 +1,7 @@
 // PROBLEM :: SOLVING ALMOST SORTED ARRAY OR K SORTED ARRAY
 
+// TIME COMPLEXITY:: O(N log(k))
+
 #include<bits/stdc++.h>
 using namespace std;
 
