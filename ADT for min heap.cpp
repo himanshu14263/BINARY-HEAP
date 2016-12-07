@@ -39,7 +39,7 @@ void minHeap::heapify(int i)
 	int r=rchild(i);
 	int smallest=i;
 
-	if(l<hSize && (harr[parent(i)]>harr[l]))
+	if(l<hSize && (harr[i]>harr[l]))
 		smallest=l;
 	if(r<hSize && (harr[smallest]>harr[r]))
 		smallest=r;

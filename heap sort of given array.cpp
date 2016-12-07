@@ -18,7 +18,7 @@ void heapify(int arr[],int n,int i)
 	int max=i;
 
 	// comparing parent data with left child and accordingly changing the max value
-	if(l<n && arr[parent(i)]<arr[l])
+	if(l<n && arr[i]<arr[l])
 		max=l;
 
 	// comparing parent data with left child and accordingly changing the max value
