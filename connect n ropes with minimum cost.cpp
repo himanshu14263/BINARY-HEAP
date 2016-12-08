@@ -3,6 +3,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+/////////////////////	 METHOD 1 :: BY CREATING UR OWN FUNCTION FOR HEAP  //////////////////////////////
 void minHeapify(int harr[],int size,int i)
 {
 	int l=2*i+1;
@@ -93,9 +95,35 @@ int func(int arr[],int n)
 
 	return cost;
 }
+
+
+
+/////////////////// METHOD 2 :: USE PRIORITY QUEUE ///////////////////////////////////
+
+void method2(int arr[],int n)
+{
+	// it internally uses all the heap properties
+	priority_queue<int,vector<int>,greater<int> >pq(arr,arr+n);
+
+	int cost=0;
+	while(pq.size()>1)
+	{
+		int first=pq.top();
+		pq.pop();
+		int second=pq.top();
+		pq.pop();
+
+		cost+=first+second;
+
+		pq.push(first+second);
+	}
+
+	cout<<"the ans from method 2 is :: "<< cost;
+}
 int main()
 {
 	int arr[]={3,2,6,4};
 	int n=sizeof(arr)/sizeof(arr[0]);
-	cout<<"the minimum cost is :: "<< func(arr,n);
+	cout<<"the minimum cost is :: "<< func(arr,n)<<"\n";
+	method2(arr,n);
 }
